@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Livros devolvidos</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+	
+	<div class="container">
+		<h3>Livros devolvidos</h3>
+		
+		<div class="row">
+			<form th:action="@{/employee/returnedbooks}" method="GET">
+				<input type="submit" value="Volte">
+			</form>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

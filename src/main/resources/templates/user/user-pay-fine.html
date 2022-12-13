@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pagar multa</title>
+
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+
+	<div class="container">	
+		
+		<h3>Estender livro</h3>
+		
+		<table id="tablestyle">
+			<tr>
+				<th>Titulo</th>
+				<th>Autor</th>
+			</tr>
+			<tr>
+				<td th:text="${book.title}"></td>
+				<td th:text="${book.author}"></td>
+			</tr>
+		</table>
+		<br/><br/>
+		Você está tentando estender a data de devolução de um livro que deveria ter sido devolvido à biblioteca em <b><text th:text="${book.returnDate}"/></b>.
+		Como não foi prorrogado ou devolvido no prazo, uma multa acumulou <b>$ <text th:text="${fine}"/></b>. A data de devolução do livro
+		pode ser prorrogado quando a multa é paga. A data de devolução original será estendida por <b><text th:text="${weeksToExtend}"/></b> semana(s).<br/><br/>
+		
+		<div class="row">
+			<div class="col-75">
+				<form th:action="@{/user/yourbooks/dopayment}" method="POST">
+					<input style="width: 230px" type="submit" value="Pay fine and extend return date">
+					<input type="hidden" th:name="fineAmount" th:value="${fine}">
+					<input type="hidden" th:name="weeksToExtend" th:value="${weeksToExtend}">
+					<input type="hidden" th:name="bookId" th:value="${book.bookId}">
+				</form>
+			</div>
+			<div class="col-75">
+				<form th:action="@{/user/yourbooks}" method="GET">
+					<input style="width : 230px; background-color: red;" type="submit" value="Cancelar">
+				</form>	
+			</div>	
+		</div>
+		
+		
+
+</body>
+</html>

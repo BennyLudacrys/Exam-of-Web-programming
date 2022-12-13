@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>FAQ</title>
+<link rel="styleSheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+	<ul th:replace="page-layout :: userNavBar"></ul>
+	
+	<div class="container">
+		<h3>FAQ</h3>
+		
+		<p>Não consegue encontrar sua resposta aqui? Entre em contato conosco por
+			enviando um e-mail para customerservice@library.com.</p>
+
+		<h4>Por quanto tempo posso emprestar um livro?</h4>
+		<p>Os livros podem ser emprestados por 21 dias. Este período pode ser prorrogado por uma semana de cada vez, com um máximo de três semanas. A prorrogação é gratuita
+			e só pode ser feito se ninguém mais fez uma reserva para esse livro em particular. O estado dos seus livros
+			podem ser verificados em sua conta de biblioteca pessoal em nosso site.</p>
+
+		<h4>Como posso reservar um livro?</h4>
+		<p>Pesquise o livro por meio de sua conta de biblioteca pessoal em nosso site e clique no botão "Reservar livro". Uma reserva é válida por 7 dias e custa US$ 1,- por livro.
+			Se o livro não for retirado após 7 dias, a reserva será automaticamente cancelada.</p>
+
+		<h4>O que acontece se eu não conseguir devolver um livro no prazo?</h4>
+		Uma multa de $ 0,20 por livro é cobrada por dia. Ao manter um livro em sua posse que deveria ter sido devolvido, as reservas
+		não podem ser feitos e novos pedidos não podem ser retirados.
+
+		<h4>O que acontece se eu perder um livro?</h4>
+		<p>Entre em contato com nosso atendimento ao cliente o mais rápido possível. A biblioteca cobrará um pequeno preço pelo livro, dependendo
+			em seu valor.</p>
+	</div>
+	
+</body>
+</html>

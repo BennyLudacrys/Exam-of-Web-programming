@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Informações do livro alteradas</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+	
+	<div class="container">
+		<h3>Informações do livro alteradas</h3>
+		<form th:action="@{/employee/books/showbooks}" th:method="GET">
+			<div class="row">
+				<input type="submit" value="voltar ao catálogo">
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

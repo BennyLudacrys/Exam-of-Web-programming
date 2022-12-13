@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt">
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+
+<ul th:fragment="userNavBar">
+  <li><a href="/user">Home</a></li>
+  <li><a href="/user/yourbooks">Seus livros</a></li>
+  <li><a href="/user/browsebooks">Procurar livros</a></li>
+  <li><a href="/user/yourreservations">Suas reservas</a></li>
+  <li><a href="/user/FAQ">FAQ</a></li>
+  <li style="float:right"><a class="active" href="/logout">Sair</a></li>
+</ul>
+
+<ul th:fragment="employeeNavBar">
+  <li><a href="/employee">Home</a></li>
+  <li><a href="/employee/users/showusers">Usuários</a></li>
+  <li><a href="/employee/books/showbooks">Catalogo</a></li>
+  <li><a href="/employee/orders">Faça a encomenda</a></li>
+  <li><a href="/employee/returnedbooks">Livros de Devolução</a></li>
+  <li><a href="/employee/reservations">Processar Reservas</a></li>
+  <li style="float:right"><a class="active" href="/logout">Sair</a></li>
+</ul>
+
+<ul th:fragment="adminNavBar">
+  <li><a href="/admin">Home</a></li>
+  <li><a href="/admin/manageaccounts">Gerenciar contas</a></li>
+  <li style="float:right"><a class="active" href="/logout">Sair</a></li>
+</ul>
+
+</body>
+</html>

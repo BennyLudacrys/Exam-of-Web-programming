@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Definir reserva como pronto para retirada</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+	<div class="container">
+		<h3>Definir a reserva do livro como pronto para retirada</h3>
+		<p>Tem certeza?</p>
+		<p>Você está prestes a definir o status deste livro como pronto para retirada:</p>
+
+		<div class="row">
+			<div class="col-50">
+				Titulo:
+			</div>
+			<div class="col-75">
+				<text th:text="${book.title}"></text>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-50">
+				Autor:
+			</div>
+			<div class="col-75">
+				<text th:text="${book.author}"></text>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-50">
+				ANo de lancamento:
+			</div>
+			<div class="col-75">
+				<text th:text="${book.releaseYear}"></text>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-50">
+				Edicao
+			</div>
+			<div class="col-75">
+				<text th:text="${book.edition}"></text>
+			</div>
+		</div>
+		
+		<p><b><text th:text="${user.firstName + ' ' + user.lastName}"></b> will receive a notification.</p>
+	
+		<div class="row">
+			<div class="col-50">
+				<form th:action="@{/employee/updatebookreservation}" th:method="PUT">
+					<input type="submit" value="Sim">
+					<input type="hidden" th:name="_method" th:value="PUT">
+					<input type="hidden" th:name="bookId" th:value="${book.bookId}">
+					<input type="hidden" th:name="userId" th:value="${user.userId}">
+				</form>
+			</div>
+			<div class="col-50">
+				<form th:action="@{/employee/reservations}" method="GET">
+					<input style="background-color: red" type="submit" value="Nao">
+				</form>
+			</div>
+		</div>
+	
+	</div>
+
+</body>
+</html>

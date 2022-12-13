@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>A data de devolução não pode ser estendida</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+	
+	<div class="container">
+		<h3>A data de devolução não pode ser estendida</h3>
+
+		<p>A data de devolução do livro que você está tentando estender não pode ser estendida. Possíveis razões são:		<br/><br/>
+			- O período máximo de uso é atingido.<br/>
+			- A data de devolução já foi prorrogada por 3 semanas.<br/>
+			- Outra pessoa reservou o livro.<br/><br/>
+
+			Por favor, certifique-se de devolver este livro a tempo para a biblioteca.
+		</p>
+		
+	
+		<div class="row">
+			<form th:action="@{/user/yourbooks}" method="GET">
+				<input style="width: 200px" type="submit" value="Volte para seus livros">
+			</form>
+		</div>
+		
+	</div>
+	
+</body>
+</html>

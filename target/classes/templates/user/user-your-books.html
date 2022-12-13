@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Teus Livros</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+	<ul th:replace="page-layout :: userNavBar"></ul>
+	
+		<div class="container">
+			<h3>Teus Livros</h3>
+			
+			<p th:if="${books.size() == 0}">Nao tens nenhum livro em uso.</p>
+			
+			<table th:if="${books.size > 0}" id="tablestyle">
+				<tr>
+					<th>Titulo</th>
+					<th>Autor</th>
+					<th>Ano de lancamento</th>
+					<th>Edicao</th>
+					<th>Data da devolucao</th>
+					<th>Multa</th>
+					<th>Tempo extendido</th>
+					<th>Extender</th>
+				</tr>
+				
+				<tr  th:each="book : ${books}">
+					<td th:text="${book.key.title}"></td>
+					<td th:text="${book.key.author}"></td>
+					<td th:text="${book.key.releaseYear}"></td>
+					<td th:text="${book.key.edition}"></td>
+					<td th:text="${book.key.returnDate}"></td>
+					<td th:if="${book.value > 0}" style="color:red"  th:text="${ book.value +' MT'}"></td>
+					<td th:if="${book.value == 0}" th:text="${book.value +' MT'}"></td>
+					<td th:text="${book.key.timesExtended}"></td>
+					<td style="width: 260px">
+						<form th:action="@{/user/yourbooks/extend}" th:method="POST">
+							<input class="table" style="width: 250px" type="submit" value="Estender a data de devolução em uma semana">
+							<input type="hidden" th:value=${book.key.bookId} name="bookId">
+							<input type="hidden" th:value="${book.value}" name="fineAmount">
+							<input type="hidden" th:name="_method" th:value="PUT"> 
+							<input type="hidden" th:name="weeksToExtend" th:value="1">
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

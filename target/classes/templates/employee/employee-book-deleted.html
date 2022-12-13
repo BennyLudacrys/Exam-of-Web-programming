@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Livro deletado</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/account-layout.css}">
+</head>
+<body>
+	<div class="container">
+		<h3>O livro foi excluído com sucesso!</h3>
+
+		<div class="row">
+			<form th:action="@{/employee/books/showbooks}" method="GET">
+				<input type="submit" value="voltar ao catálogo">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
